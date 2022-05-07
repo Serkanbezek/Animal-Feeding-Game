@@ -15,13 +15,23 @@ public class PlayerController : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * PlayerSpeed * Time.deltaTime * HorizontalInput);
 
-        var tempPos = transform.position;
-        tempPos.x = Mathf.Clamp(tempPos.x, -Xrange, Xrange);
-        transform.position = tempPos;
+        ConstrainPlayer();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(ProjectilePrefab, transform.position, ProjectilePrefab.transform.rotation);
+            ShootProjectile();
         }
+    }
+
+    private void ConstrainPlayer()
+    {
+        var tempPos = transform.position;
+        tempPos.x = Mathf.Clamp(tempPos.x, -Xrange, Xrange);
+        transform.position = tempPos;
+    }
+
+    private void ShootProjectile()
+    {
+        Instantiate(ProjectilePrefab, transform.position, ProjectilePrefab.transform.rotation);
     }
 }
