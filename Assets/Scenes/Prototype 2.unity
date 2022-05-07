@@ -580,10 +580,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1ec34def7868b4c903b01df5d722f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefabs:
+  AnimalPrefabs:
   - {fileID: 8945467068914360502, guid: 876c05fddf7760b4a83a1e3cc08c417a, type: 3}
   - {fileID: 8655232129430314171, guid: 21c66e88c8c04a341a58e2c1e1dec98d, type: 3}
   - {fileID: 1617188432371086872, guid: 6ae98fe91b93cd94cadc51f4e1533fb7, type: 3}
+  spawnRangeX: 16
+  spawnPosZ: 20
+  startDelay: 2
+  spawnInterval: 1.5
 --- !u!4 &992920783
 Transform:
   m_ObjectHideFlags: 0
@@ -676,10 +680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84226a0b25c47774e9f1474a04ee2775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: 0
-  playerSpeed: 15
-  xRange: 15.5
-  projectilePrefab: {fileID: 624254201838646099, guid: b3880e21163fabb4f87c6a539197ae34, type: 3}
+  HorizontalInput: 0
+  PlayerSpeed: 10
+  Xrange: 15.5
+  ProjectilePrefab: {fileID: 624254201838646099, guid: b3880e21163fabb4f87c6a539197ae34, type: 3}
 --- !u!1 &1590138454
 GameObject:
   m_ObjectHideFlags: 0
