@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float playerSpeed = 10.0f;
-    public float xRange = 15.5f;
-
-    public GameObject projectilePrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public float HorizontalInput;
+    public float PlayerSpeed = 10.0f;
+    public float Xrange = 15.5f;
+    public GameObject ProjectilePrefab;
+    
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * playerSpeed * Time.deltaTime * horizontalInput);
+        HorizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * PlayerSpeed * Time.deltaTime * HorizontalInput);
 
         var tempPos = transform.position;
-        tempPos.x = Mathf.Clamp(tempPos.x, -xRange, xRange);
+        tempPos.x = Mathf.Clamp(tempPos.x, -Xrange, Xrange);
         transform.position = tempPos;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(ProjectilePrefab, transform.position, ProjectilePrefab.transform.rotation);
         }
     }
 }
